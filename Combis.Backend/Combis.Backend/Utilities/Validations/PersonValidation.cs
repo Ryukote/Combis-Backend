@@ -13,7 +13,8 @@ namespace Combis.Backend.Utilities.Validations
             RuleFor(x => x.Surname).NotEmpty();
             RuleFor(x => x.PhoneNumber).Must(x => x.Contains("+")).Must(x => !x.Contains(" "));
             RuleFor(x => x.Surname).NotEmpty();
-            RuleFor(x => x.ZipCode).NotNull();
+            RuleFor(x => x.ZipCode).NotNull().GreaterThanOrEqualTo(1);
+            RuleFor(x => x.City).NotEmpty();
         }
     }
 }
