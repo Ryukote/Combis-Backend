@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Combis.Backend", "Combis.Backend\Combis.Backend.csproj", "{4C8C5FF5-C8BF-45D5-8A0A-EF1C12A12479}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Combis.Backend.Tests", "Combis.Backend.Tests\Combis.Backend.Tests.csproj", "{E10DD2FF-820F-46CC-AA75-4A6ED7BD3E28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4C8C5FF5-C8BF-45D5-8A0A-EF1C12A12479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C8C5FF5-C8BF-45D5-8A0A-EF1C12A12479}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C8C5FF5-C8BF-45D5-8A0A-EF1C12A12479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E10DD2FF-820F-46CC-AA75-4A6ED7BD3E28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E10DD2FF-820F-46CC-AA75-4A6ED7BD3E28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E10DD2FF-820F-46CC-AA75-4A6ED7BD3E28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E10DD2FF-820F-46CC-AA75-4A6ED7BD3E28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
