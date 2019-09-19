@@ -1,4 +1,5 @@
-﻿using Combis.Backend.Models;
+﻿using Combis.Backend.DTO;
+using Combis.Backend.Models;
 using Combis.Backend.Utilities.Validations;
 using Xunit;
 
@@ -15,7 +16,7 @@ namespace Combis.Backend.Tests
         [Fact]
         public void PersonInstanceIsValid()
         {
-            Person person = new Person()
+            PersonDTO person = new PersonDTO()
             {
                 Name = "Antonio",
                 Surname = "Halužan",
@@ -32,7 +33,7 @@ namespace Combis.Backend.Tests
         [Fact]
         public void NameIsNotValid()
         {
-            Person person = new Person()
+            PersonDTO person = new PersonDTO()
             {
                 Name = "",
                 Surname = "Halužan",
@@ -49,7 +50,7 @@ namespace Combis.Backend.Tests
         [Fact]
         public void SurnameIsNotValid()
         {
-            Person person = new Person()
+            PersonDTO person = new PersonDTO()
             {
                 Name = "Antonio",
                 Surname = "",
@@ -66,7 +67,7 @@ namespace Combis.Backend.Tests
         [Fact]
         public void PhoneNumberIsNotValid()
         {
-            Person person = new Person()
+            PersonDTO person = new PersonDTO()
             {
                 Name = "Antonio",
                 Surname = "Halužan",
@@ -83,7 +84,7 @@ namespace Combis.Backend.Tests
         [Fact]
         public void ZipCodeIsNotValid()
         {
-            Person person = new Person()
+            PersonDTO person = new PersonDTO()
             {
                 Name = "Antonio",
                 Surname = "Halužan",
@@ -100,7 +101,7 @@ namespace Combis.Backend.Tests
         [Fact]
         public void CityIsNotValid()
         {
-            Person person = new Person()
+            PersonDTO person = new PersonDTO()
             {
                 Name = "Antonio",
                 Surname = "Halužan",

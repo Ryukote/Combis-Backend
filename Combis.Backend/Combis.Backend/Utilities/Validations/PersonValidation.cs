@@ -1,11 +1,12 @@
-﻿using Combis.Backend.Models;
+﻿using Combis.Backend.DTO;
+using Combis.Backend.Models;
 using FluentValidation;
 using System;
 using System.Linq;
 
 namespace Combis.Backend.Utilities.Validations
 {
-    public class PersonValidation : AbstractValidator<Person>
+    public class PersonValidation : AbstractValidator<PersonDTO>
     {
         public PersonValidation()
         {
