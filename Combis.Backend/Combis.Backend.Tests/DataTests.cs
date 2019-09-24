@@ -4,6 +4,7 @@ using Combis.Backend.Models;
 using Combis.Backend.Tests.Utilities;
 using Combis.Backend.Utilities.Validations;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using Serilog;
 using System;
 using System.Threading.Tasks;
@@ -15,18 +16,15 @@ namespace Combis.Backend.Tests
     public class DataTests
     {
         private CombisContext _context;
-        private Serilog.ILogger _logger;
+        private Microsoft.Extensions.Logging.ILogger _logger;
         private PersonValidation _validator;
         public DataTests(ITestOutputHelper output)
         {
             var databaseName = Guid.NewGuid().ToString();
             _context = new MockData().SetupContext(databaseName);
 
-            _logger = new LoggerConfiguration()
-                .MinimumLevel.Verbose()
-                .WriteTo.TestOutput(output, Serilog.Events.LogEventLevel.Verbose)
-                .CreateLogger()
-                .ForContext<CombisContext>();
+            _logger = new NullLogger<dynamic>();
+
             _validator = new PersonValidation();
         }
 
@@ -41,7 +39,7 @@ namespace Combis.Backend.Tests
                 Name = "Joža",
                 PhoneNumber = "+385910397123",
                 Surname = "Jožić",
-                ZipCode = 10000
+                ZipCode = 10000.ToString()
             };
 
             var validationData = _validator.Validate(person);

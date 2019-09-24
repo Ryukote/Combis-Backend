@@ -21,7 +21,7 @@ namespace Combis.Backend.Tests
                 Name = "Antonio",
                 Surname = "Halužan",
                 PhoneNumber = "+385959180338",
-                ZipCode = 10000,
+                ZipCode = 10000.ToString(),
                 City = "Zagreb"
             };
 
@@ -38,7 +38,7 @@ namespace Combis.Backend.Tests
                 Name = "",
                 Surname = "Halužan",
                 PhoneNumber = "+385959180338",
-                ZipCode = 10000,
+                ZipCode = 10000.ToString(),
                 City = "Zagreb"
             };
 
@@ -55,7 +55,7 @@ namespace Combis.Backend.Tests
                 Name = "Antonio",
                 Surname = "",
                 PhoneNumber = "+385959180338",
-                ZipCode = 10000,
+                ZipCode = 10000.ToString(),
                 City = "Zagreb"
             };
 
@@ -72,7 +72,7 @@ namespace Combis.Backend.Tests
                 Name = "Antonio",
                 Surname = "Halužan",
                 PhoneNumber = "385959180338",
-                ZipCode = 10000,
+                ZipCode = 10000.ToString(),
                 City = "Zagreb"
             };
 
@@ -89,7 +89,7 @@ namespace Combis.Backend.Tests
                 Name = "Antonio",
                 Surname = "Halužan",
                 PhoneNumber = "+385959180338",
-                ZipCode = -1,
+                ZipCode = (-1).ToString(),
                 City = "Zagreb"
             };
 
@@ -106,7 +106,7 @@ namespace Combis.Backend.Tests
                 Name = "Antonio",
                 Surname = "Halužan",
                 PhoneNumber = "+385959180338",
-                ZipCode = 10000,
+                ZipCode = 10000.ToString(),
                 City = ""
             };
 
