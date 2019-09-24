@@ -10,12 +10,21 @@ namespace Combis.Backend.Utilities.Validations
     {
         public PersonValidation()
         {
-            RuleFor(x => x.Name).NotEmpty();
-            RuleFor(x => x.Surname).NotEmpty();
-            RuleFor(x => x.PhoneNumber).Must(x => x.Contains("+")).Must(x => !x.Contains(" "));
-            RuleFor(x => x.Surname).NotEmpty();
-            RuleFor(x => x.ZipCode).NotNull().GreaterThanOrEqualTo(1);
-            RuleFor(x => x.City).NotEmpty();
+            RuleFor(x => x.Name)
+                .NotEmpty();
+            RuleFor(x => x.Surname)
+                .NotEmpty();
+            RuleFor(x => x.PhoneNumber)
+                .Must(x => x.Contains("+"))
+                .Must(x => !x.Contains(" "));
+            RuleFor(x => x.Surname)
+                .NotEmpty();
+            RuleFor(x => x.City)
+                .NotEmpty();
+            RuleFor(x => x.ZipCode)
+                .NotEmpty()
+                .Must(x => int.TryParse(x, out int n))
+                .Must(x => int.Parse(x) > 0);
         }
     }
 }

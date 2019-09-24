@@ -4,7 +4,7 @@ using AutoMapper;
 using Combis.Backend.Contracts;
 using Combis.Backend.DTO;
 using Combis.Backend.Models;
-using Serilog;
+using Microsoft.Extensions.Logging;
 
 namespace Combis.Backend.Data
 {
@@ -34,21 +34,21 @@ namespace Combis.Backend.Data
             {
                 if (await _context.SaveChangesAsync() == 1)
                 {
-                    _logger.Information($"{data}");
+                    _logger.LogInformation($"{data}");
                     return 1;
                 }
 
                 else
                 {
-                    _logger.Debug($"{data}");
+                    _logger.LogDebug($"{data}");
                     return -1;
                 }
             }
             catch(Exception ex)
             {
-                _logger.Error($"{data}");
-                _logger.Error($"{ex.Message}");
-                _logger.Error($"{ex.StackTrace}");
+                _logger.LogError($"{data}");
+                _logger.LogError($"{ex.Message}");
+                _logger.LogError($"{ex.StackTrace}");
 
                 throw ex;
             }
