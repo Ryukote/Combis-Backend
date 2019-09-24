@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Combis.Backend.Contracts;
+﻿using Combis.Backend.Contracts;
 using Combis.Backend.Data;
 using Combis.Backend.DTO;
 using Combis.Backend.Models;
@@ -10,6 +7,9 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Combis.Backend.Controllers
 {
@@ -29,9 +29,9 @@ namespace Combis.Backend.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] JArray dtoCollection)
+        public async Task<IActionResult> Post([FromBody] JArray json)
         {
-            var data = dtoCollection.ToObject<ICollection<PersonDTO>>();
+            var data = json.ToObject<ICollection<PersonDTO>>();
 
             var returnData = new List<PersonDTO>();
 
@@ -50,22 +50,6 @@ namespace Combis.Backend.Controllers
             }
 
             return Ok(returnData);
-            //if(_validator.Validate(dto).IsValid)
-            //{
-            //    var result = await _handler.AddAsync(dto);
-
-            //    if(result == 1)
-            //    {
-            //        return Ok();
-            //    }
-            //}
-
-            //return BadRequest();
-        }
-
-        public Task<IActionResult> Post([FromBody] IDTO dto)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
